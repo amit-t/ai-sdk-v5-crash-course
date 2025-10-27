@@ -1,13 +1,13 @@
-import { google } from '@ai-sdk/google';
-import { streamText } from 'ai';
+import { google } from "@ai-sdk/google";
+import { streamText } from "ai";
 
-const model = google('gemini-2.0-flash');
+const model = google("gemini-2.0-flash");
 
 const stream = streamText({
-  model,
-  prompt: 'Give me a sonnet about a cat called Steven.',
+	model,
+	prompt: "",
 });
 
 for await (const chunk of stream.toUIMessageStream()) {
-  console.log(chunk);
+	console.log(chunk);
 }
